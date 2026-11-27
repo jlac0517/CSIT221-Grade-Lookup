@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; connect-src https://*.supabase.co; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>CSIT221 Grade Lookup</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <p class="eyebrow">CSIT221 · Data Structures and Algorithms</p>
+      <h1>Grade lookup</h1>
+      <p class="sub">Enter your details exactly as they appear in the class record.</p>
+    </header>
+
+    <form id="lookup" class="card" autocomplete="off" novalidate>
+      <label for="section">Section</label>
+      <select id="section" required>
+        <option value="" selected disabled>Choose your section</option>
+        <option value="G5">G5</option>
+        <option value="G10">G10</option>
+      </select>
+
+      <label for="sid">Student ID</label>
+      <input id="sid" inputmode="numeric" placeholder="e.g. 25-1234-567" maxlength="30" required>
+
+      <div class="row">
+        <div>
+          <label for="last">Last name</label>
+          <input id="last" placeholder="e.g. Dela Cruz" maxlength="80" autocapitalize="words" required>
+        </div>
+        <div>
+          <label for="first">First name</label>
+          <input id="first" placeholder="All given names" maxlength="80" autocapitalize="words" required>
+        </div>
+      </div>
+      <p class="hint">Capitalization, dashes, and middle initials don't matter. Type all your given names (e.g. "John Emmanuel", not just "John").</p>
+
+      <button id="go" type="submit">View my grades</button>
+      <p id="msg" class="msg" role="alert" hidden></p>
+    </form>
+
+    <section id="result" hidden></section>
+  </main>
+</body>
+</html>
